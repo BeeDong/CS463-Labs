@@ -9,6 +9,59 @@
   <body>
     <main>
       <!-- Add your code here -->
+      <h1>Roth IRA Calculator</h1>
+      <div>
+        <label for="question">Balance ($)</label>
+        <br />
+        <input type="text" id="balance" name="balance" />
+      </div>
+      <br />
+      <div>
+        <label for="question">Annual contribution (4)</label>
+        <br />
+        <input type="text" id="annualcon" name="annualcon" />
+      </div>
+      <br />
+      <fieldset>
+        <legend>Maximize contributions?</legend>
+        <input type="radio" id="yes" name="yes" value="yes" />
+        <label for="yes">Yes</label>
+        <input type="radio" id="no" name="no" value="no" />
+        <label for="no">No</label>
+      </fieldset>
+      <br />
+      <div>
+        <label for="question">Expected rate of return (5)</label>
+        <br />
+        <input type="number" id="annualcon" name="annualcon" />
+      </div>
+      <br />
+      <div>
+        <label for="question">Current age</label>
+        <br />
+        <input type="number" id="currentAge" name="currentAge" />
+      </div>
+      <br />
+      <div>
+        <label for="question">Retirement age</label>
+        <br />
+        <input type="number" id="retireAge" name="retireAge" />
+      </div>
+      <br />
+      <div>
+        <label for="question">Marginal tax rate (%)</label>
+        <br />
+        <input type="number" id="taxRate" name="taxRate" />
+      </div>
+      <br />
+      <input type="button" value="Calculate" />
+      <input type="button" value="Reset" />
+      <p>
+        This exercise is a simplified version of the Roth IRA Calculator at
+        <a href="https://www.calculator.net/roth-ira-calculator.html"
+          >Calculator.net</a
+        >
+      </p>
     </main>
   </body>
 </html>
