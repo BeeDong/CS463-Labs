@@ -1,1 +1,355 @@
 /* Add your CSS code here  */
+/* --- Root Variables --- */
+:root {
+  --ice-blue-juvie: #8fbcd4;
+  --gothic-gray-blue: #6f8796;
+  --dark-slate-infinity: #1f2a33;
+}
+
+.container {
+  /* This limits how wide the text and images can get */
+  max-width: 1024px;
+
+  /* This centers the container on the screen */
+  margin: 0 auto;
+
+  /* This provides the 'breathing room' on the left and right */
+  padding: 20px 40px;
+
+  /* Ensures padding doesn't increase the total width */
+  box-sizing: border-box;
+}
+
+/* Ensure the navbar still hits the edges of the browser */
+.navbar {
+  width: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Typography - Only Titles and Navbar Links in Cinzel */
+h1,
+h2,
+.navbar a,
+th {
+  font-family: "Cinzel", serif;
+  text-transform: uppercase; /* Matches the all-caps look in the image */
+}
+
+/* Line beneath EVERY section header */
+h2 {
+  border-bottom: 1px solid #e0e0e0; /* Thin, light gray line as seen in image */
+  padding-bottom: 10px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #333;
+  width: 100%; /* Ensures the line spans the width of the container */
+}
+
+/* Specific styling for the main page title */
+.main-heading {
+  font-family: "Cinzel", serif;
+  color: var(--ice-blue-juvie); /* Matches the navbar link color */
+  text-align: center;
+  text-transform: uppercase;
+  padding: 40px 0;
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+/* Section Header Borders */
+h2 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid #e0e0e0; /* Very light, thin line as seen in image */
+  padding-bottom: 10px;
+  margin-top: 40px;
+  color: #222;
+}
+
+/* --- Navbar --- */
+.navbar {
+  background-color: var(--dark-slate-infinity);
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  margin: 0;
+  padding: 15px;
+}
+
+.navbar a {
+  /* Text is blue by default to match the image */
+  color: var(--ice-blue-juvie);
+  text-decoration: none;
+  padding: 10px 20px;
+  font-family: "Cinzel", serif;
+  text-transform: uppercase;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect: Background turns blue, text turns dark */
+.navbar a:hover {
+  background-color: var(--ice-blue-juvie);
+  color: var(--dark-slate-infinity);
+  border-radius: 4px;
+}
+
+/* List Styling */
+ul {
+  list-style-type: disc;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.image-gallery {
+  /* Line beneath the section header */
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-between; /* Spreads images to the edges of the container */
+  align-items: center;
+  gap: 15px; /* Ensures they don't touch if the screen narrows */
+  padding: 20px 0;
+}
+
+.image-container img {
+  /* This ensures the three images fit side-by-side within the container */
+  width: 30%;
+  height: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+}
+
+/* Header and Footer backgrounds */
+.pov-table thead tr,
+.pov-table tfoot tr {
+  background-color: #f2f2f2; /* Light gray background seen in image */
+}
+
+/* --- Root Variables --- */
+:root {
+  --ice-blue-juvie: #8fbcd4;
+  --gothic-gray-blue: #6f8796;
+  --dark-slate-infinity: #1f2a33;
+}
+
+/* --- General Typography --- */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Titles and Navbar Links: Cinzel & All Caps */
+h1,
+h2,
+.navbar a {
+  font-family: "Cinzel", serif;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Lines beneath section headers */
+h2 {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+/* --- Navbar Styling --- */
+.navbar {
+  background-color: var(--dark-slate-infinity);
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  margin: 0;
+  padding: 15px;
+}
+
+.navbar a {
+  color: var(--ice-blue-juvie); /* Blue text by default */
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: var(--ice-blue-juvie); /* Blue box on hover */
+  color: var(--dark-slate-infinity); /* Dark text on hover */
+  border-radius: 4px;
+}
+
+/* --- Table Styling: NO CINZEL --- */
+.pov-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  /* Explicitly setting sans-serif to prevent inheritance from headers */
+  font-family: sans-serif;
+}
+
+/* Header and Footer Backgrounds */
+.pov-table thead tr,
+.pov-table tfoot tr {
+  background-color: #f2f2f2;
+}
+
+/* Top and Bottom rows: Bold, No Cinzel, No All-Caps */
+.pov-table thead th,
+.pov-table tfoot th {
+  font-weight: bold;
+  text-transform: none; /* Sentence/Title case only */
+  font-family: sans-serif;
+  color: #000;
+}
+
+/* General Cell Styling */
+.pov-table th,
+.pov-table td {
+  text-align: center;
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+/* 1. Character names (first column): Not bold, Left aligned */
+.pov-table tbody td:first-child {
+  font-weight: normal;
+}
+
+/* Footer "Total" label alignment */
+.pov-table tfoot th {
+  padding-right: 20px;
+}
+
+/* --- Exercise 02: Form --- */
+
+/* Wrapper to center the form on the viewport */
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 50px 20px;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+}
+
+/* The form card itself */
+.ira-form-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+.form-title {
+  color: var(--midnight-blue); /* Accent color: #161678 */
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+/* Replacing <br> by making labels and inputs block elements */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.field-group label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.field-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Fieldset and Radio styles */
+.radio-group {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 18px;
+}
+
+.radio-group legend {
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+.radio-options {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Buttons */
+.button-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-calculate {
+  background-color: var(--midnight-blue); /* #161678 */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  flex: 2; /* Make the calculate button wider */
+}
+
+.btn-reset {
+  background-color: #666;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.btn-calculate:hover {
+  filter: brightness(1.2);
+}
+
+.form-footer {
+  margin-top: 25px;
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+}
