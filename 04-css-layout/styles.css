@@ -16,6 +16,12 @@ body {
   color: var(--light-text-color);
   font-size: 1.75rem;
   text-align: center;
+  display: grid;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 h1 {
@@ -39,7 +45,248 @@ h1 {
 }
 
 /* Exercise 02 - Flexbox */
+body {
+  font-family: Arial, sans-serif;
+  background: white;
+  color: black;
+  margin: 0;
+}
 
+.top-of-page {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom-of-page {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+.navigation {
+  background: transparent;
+  padding: 0px;
+}
+
+.navigation a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: row;
+  text-wrap: wrap;
+  justify-content: space-around;
+  align-content: stretch;
+  padding: 40px 20px;
+  gap: 20px;
+}
+
+.page-area {
+  padding: 20px;
+  border-bottom: 1px solid black;
+  flex: 1;
+  border: 1px solid #333;
+  padding: 30px;
+  display: flex;
+  flex-direction: column; /* Stack text and image vertically */
+  align-items: center; /* Center items inside the card */
+  text-align: left;
+  border-radius: 15px;
+}
+
+img {
+  max-width: 300px;
+  display: block;
+}
 /* Exercise 03 - CSS Grid */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #fcfcfc;
+  --purple: #800080;
+  --lavender: lavender;
+}
+
+body {
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.2em;
+}
+
+h1 {
+  text-align: center;
+}
+
+.grid-item {
+  padding: 10px;
+  background-color: var(--purple);
+  color: var(--white);
+  font-size: 2.4em;
+  text-align: center;
+}
+
+.grid-container {
+  background-color: var(--lavender);
+  display: grid;
+  gap: 0.25rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr 4fr 1fr 1fr;
+}
+
+.grid-container .item1,
+.grid-container .item8 {
+  grid-column: 1/13;
+}
+
+.grid-container .item2 {
+  grid-column: span 8;
+}
+
+.grid-container .item3,
+.grid-container .item4,
+.grid-container .item5 {
+  grid-column: span 4;
+}
+
+.grid-container .item7 {
+  grid-column: span 4;
+  grid-row: 3/3;
+}
+
+.grid-container .item6 {
+  display: none;
+}
+/* Exercise 04 - CSS Grid Areas */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #fcfcfc;
+  --purple: #800080;
+  --lavender: lavender;
+}
+
+body {
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.2em;
+}
+
+h1 {
+  text-align: center;
+  padding: 5px;
+}
+
+.grid-item {
+  padding: 10px;
+  background-color: var(--purple);
+  color: var(--white);
+  font-size: 2.4em;
+  text-align: Left;
+  border-radius: 5px;
+}
+
+.grid-container {
+  background-color: var(--lavender);
+  display: grid;
+  gap: 1rem;
+  padding: 10px;
+}
 
 /* Exercise 04 - CSS Grid Areas */
+/* Google Gemini assisted in the creation of this code
+with edits made by me */
+/* 1. Assign each class to a named grid area */
+.h1 {
+  grid-area: h1;
+}
+.header {
+  grid-area: header;
+}
+.article {
+  grid-area: article;
+}
+.aside {
+  grid-area: aside;
+}
+.section {
+  grid-area: section;
+}
+.footer {
+  grid-area: footer;
+}
+
+/* 2. Mobile Layout (Default: < 768px) */
+/* Vertical stack as seen in the first screenshot */
+.grid-container {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 0.25fr 2fr 2fr 0.25fr 0.25fr;
+  grid-template-areas:
+    "title"
+    "header"
+    "article"
+    "section"
+    "aside"
+    "footer";
+}
+
+/* 3. Tablet Layout (768px to 1023px) */
+/* Aside moves next to Article; Section and Footer stay full width */
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr 2fr 1fr 1fr;
+    grid-template-areas:
+      "title title"
+      "header  header"
+      "article aside"
+      "section section"
+      "footer  footer";
+  }
+}
+
+/* 4. Laptop Layout (1024px and up) */
+/* Aside moves to the left of Article */
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr 2fr 2fr 1fr 1fr;
+    grid-template-areas:
+      "title title"
+      "header  header"
+      "aside   article"
+      "section section"
+      "footer  footer";
+  }
+}
+
+/* Optional: Ensure text is aligned to the top-left like the screenshot */
+.grid-container .grid-item {
+  text-align: left;
+  min-height: 100px;
+  border-radius: 5px; /* Matching the slightly rounded corners in screenshots */
+}
+
+.title {
+  text-align: center;
+}
+
+/* Make Article and Section taller to match the visual height in the image */
+.article,
+.section {
+  min-height: 300px;
+}
