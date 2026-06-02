@@ -28,7 +28,7 @@ const server = http.createServer((req, res) => {
     req.on("end", () => {
       const userdata = querystring.parse(body);
       console.log(userdata);
-      const { usernameInput: name, emailInput: email } = userdata;
+      const { nameInput: name, emailInput: email } = userdata;
 
       res.writeHead(200, { "Content-Type": "text/html" });
       res.write(`<p>Thank you for submitting your information: </p>`);
